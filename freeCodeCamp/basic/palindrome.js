@@ -1,19 +1,4 @@
-/*
-will take a string with any character, clean it up and test it 
-against the cleaned and reversed version
-*/
-function palindrome(str) {
-    let cleanStr = str.replace(/[^a-z]/gi, "").toLowerCase();
-    let reverseStr = cleanStr.split('').reverse().join('');
-    return cleanStr === reverseStr;
-}
-
-/*
-takes a string and tests the first character against the last, 
-if they are the same remove the last character to create a new 
-last character
-*/
-
+// first attempt: checks the first index vs the last and removes it if its equal
 function isPal(str) {
     str1 = str.split('');
     for (let i = 0; i < str1.length; i++) {
@@ -27,4 +12,15 @@ function isPal(str) {
         }
     }
 }
+
+//refactored: cleans a string of non a-z characters, sets it to lowercase and compares to the reverse
+//will return a boolean
+function palindrome(str) {
+    let cleanStr = str.replace(/[^a-z]/gi, "").toLowerCase();
+    let reverseStr = cleanStr.split('').reverse().join('');
+    return cleanStr === reverseStr;
+}
+
+
+
 
