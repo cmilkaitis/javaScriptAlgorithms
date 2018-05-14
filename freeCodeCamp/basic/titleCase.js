@@ -3,9 +3,9 @@ function titleCase(str) {
     let newWords = [];
     
     for (let i = 0; i < words.length; i++) {
-     let first = words[i].charAt(0).toUpperCase(); 
-     let letters = words[i].slice(1);
-     newWords.push(first + letters);
+        let first = words[i].charAt(0).toUpperCase(); 
+        let letters = words[i].slice(1);
+        newWords.push(first + letters);
     }
     return newWords.join(" "); 
   }
@@ -15,6 +15,15 @@ function titleCase(str) {
     let words = str.toLowerCase().split(" ");
     
     return words.map(word => {
-      return word.replace(word.charAt(0), word.charAt(0).toUpperCase());
+        return word.replace(word.charAt(0), word.charAt(0).toUpperCase());
    }).join(" ");  
   }
+
+
+function titleCase(str) {
+    return str.toLowerCase()
+              .split(" ")
+              .map(word => {
+        return word.replace(word.charAt(0), word.charAt(0).toUpperCase());
+    }).join(" "); 
+   }
