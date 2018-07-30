@@ -8,15 +8,13 @@ function bowl(arr){
     if (arr[0] === 10){
       totalScore += frameScore;
       totalScore += arr[2] + arr[3];
-      arr.splice(0,2);
     } else if (frameScore === 10){
       totalScore += frameScore;
       totalScore += arr[2];
-      arr.splice(0,2);
     } else {
       totalScore += frameScore;
-      arr.splice(0,2);
     }  
+    arr.splice(0,2);
   }
   return totalScore;
 }
