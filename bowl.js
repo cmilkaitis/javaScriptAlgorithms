@@ -3,27 +3,20 @@ function bowl(arr){
   let totalScore = 0;
 
   while (arr.length > 1) {
-
     let frameScore = arr[0] + arr[1];
-    if (arr[0] === 10){
-      totalScore += 10;
-      totalScore += arr[1];
-      totalScore += arr[2];
-      totalScore += arr[3];
 
-      arr.shift();
-      arr.shift();
-    } else if (frameScore === 10){
-      totalScore += arr[2];
+    if (arr[0] === 10){
       totalScore += frameScore;
-      arr.shift();
-      arr.shift();
+      totalScore += arr[2] + arr[3];
+      arr.splice(0,2);
+    } else if (frameScore === 10){
+      totalScore += frameScore;
+      totalScore += arr[2];
+      arr.splice(0,2);
     } else {
       totalScore += frameScore;
-      arr.shift();
-      arr.shift();
-    }
-     
+      arr.splice(0,2);
+    }  
   }
   return totalScore;
 }
